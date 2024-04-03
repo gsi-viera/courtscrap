@@ -1,18 +1,9 @@
 from pprint import pprint
-from types import SimpleNamespace
 
-from courts.missouri import get_case
+from courts.court_integration import CourtAndCase
+from courts.missouri import get_cases
 
 URL = 'https://www.courts.mo.gov/cnet/cases/newHeaderData.do?caseNumber=171155061&courtId=CT12&isTicket=&locnCode='
-
-
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-def get_cases() -> list[any]:
-    return [SimpleNamespace(**get_case("171155061"))]
 
 
 def print_cases(cases: list[any]):
@@ -21,7 +12,8 @@ def print_cases(cases: list[any]):
 
 def scrap_court():
     # Use a breakpoint in the code line below to debug your script.
-    cases = get_cases()
+
+    cases = get_cases([CourtAndCase("CT12", "171155061")])
     print_cases(cases)
 
 

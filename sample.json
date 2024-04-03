@@ -1,0 +1,69 @@
+{
+  "courtId": "CT12",
+  "caseNumber": "171155061",
+  "caseDesc": "ST V PAULINE ANN SPAULDING",
+  "courtDesc": "12th Judicial Circuit",
+  "location": "Warren",
+  "filingDate": "03/28/2024",
+  "formattedFilingDate": "03/28/2024",
+  "predCode": "ZZ",
+  "protectionOrder": false,
+  "caseType": "Criminal/Infract.- see Charges",
+  "caseSecurity": "1",
+  "caseTypeCode": "T2",
+  "vineCode": "407",
+  "fileLocn": "E-CASE",
+  "locnCode": "BB",
+  "courtCode": "12",
+  "vineDisplay": "Y",
+  "vineID": "171155061",
+  "caseDispositionDetail": {
+    "dispositionDescription": "Not Disposed"
+  },
+  "caseChargeList": [
+    {
+      "caseId": "171155061",
+      "subCase": "171155061",
+      "chargeNumber": "1",
+      "chargeFilingDate": "03/15/2024",
+      "chargeCode": "301.020-001N198654.0",
+      "ncicCode": "06",
+      "chargePIDM": "90498682",
+      "chargeDescription": "Failure To Register Motor Vehicle",
+      "chargePredCode": "ZREG",
+      "chargeCodeLevel": "MB",
+      "chargeCodeLevelDescription": "Misdemeanor B",
+      "statuteNumber": "301.020",
+      "ticketNumber": "171155061",
+      "boundover": false
+    }
+  ],
+  "judgeDetails": {
+    "lastName": "SCHEIBE",
+    "firstName": "RICHARD",
+    "middleInitials": "L",
+    "formattedName": "SCHEIBE, RICHARD L"
+  },
+  "courtType": "C",
+  "ticketSearchResult": {
+    "naInd": "Y",
+    "oocEligible": "Y"
+  },
+  "disposed": false,
+  "pleaAndPayInd": "Y",
+  "legalFileAccepted": false,
+  "paperAccepted": false,
+  "confidential": false,
+  "displayJudgeNotes": false,
+  "caseNoteCount": 0,
+  "displayLegalFileViewer": false,
+  "displayFileViewer": false,
+  "canUserSeePublicDocuments": false,
+  "canUserSeeCaseDocuments": false,
+  "canUserSeeEnoticeHistory": false,
+  "canSelectDocket": false,
+  "canSeeEcfLinks": false,
+  "canSeeLegalFileLinks": false,
+  "isTicket": false,
+  "fileId": "(E-CASE)"
+}
