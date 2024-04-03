@@ -8,11 +8,11 @@ import urllib
 
 @dataclass
 class CaseSearchParams:
-    newSearch: str
-    courtCode: str
-    startDate: str
-    caseType: str
-    caseStatus: str
+    newSearch: Optional[str] = None
+    courtCode: Optional[str] = None
+    startDate: Optional[str] = None
+    caseType: Optional[str] = None
+    caseStatus: Optional[str] = None
     countyCode: Optional[str] = None
 
 
@@ -37,8 +37,12 @@ def search_cases():
     )
     session = create_search(params)
     response = get_search_results(session, draw=1)
-    recordsTotal = response.recordsTotal
-    return response
+    count = response.recordsTotal
+    records = response.data
+    while len(records) < count:
+        response = get_search_results(session, draw=response.draw + 1)
+        records.extend(response.data)
+    return records
 
 
 def get_search_results(session: any, draw: int):
