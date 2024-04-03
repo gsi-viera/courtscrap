@@ -37,8 +37,17 @@ do_curl_simple(){
 curl 'https://www.courts.mo.gov/cnet/searchResult.do' \
   -H 'Accept: application/json, text/javascript, */*; q=0.01' \
   -H 'Content-Type: application/json;charset=UTF-8' \
-  -H 'Cookie: JSESSIONID=0002-Me6LhYVWN8jLzFROfpbN12:8EAKVDAF6; UJID=a49c2e89-7865-407e-80c0-1e08fb23aeab; UJIA=-1951283160; _ga=GA1.2.1959160734.1712151730; _gid=GA1.2.502009280.1712151730; _ga_DSVJ8DTRVZ=GS1.1.1712151729.1.0.1712152529.0.0.0' \
+  -H 'Cookie: JSESSIONID=0001fIJANtS3FyFj3q6o-iLrDGv:1NJUVVVENT;' \
   --data-raw '{"draw":1,"columns":[{"data":0,"name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"initFiling","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseNumber","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseStyle","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseType","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"countyDesc","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}}],"order":[{"column":0,"dir":"asc"}],"start":0,"length":10,"search":{"value":"","regex":false}}'
 }
 
-do_curl_simple
+do_curl_2(){
+  curl 'https://www.courts.mo.gov/cnet/searchResult.do' \
+    -H 'Accept: application/json, text/javascript, */*; q=0.01' \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Cookie: JSESSIONID=00018AyD23UHxgAHrkgrArPuQsz:-1PCB;' \
+    --data-raw '{"draw":1,"columns":[{"data":0,"name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"initFiling","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseNumber","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseStyle","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseType","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"countyDesc","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}}],"order":[{"column":0,"dir":"asc"}],"start":0,"length":10,"search":{"value":"","regex":false}}'
+}
+
+#do_curl_simple
+do_curl_2

@@ -5,6 +5,8 @@ import requests
 from courts.court_integration import CourtAndCase
 
 
+
+
 def _get_case(court_id: str, case_id: str) -> dict:
     url = f'https://www.courts.mo.gov/cnet/cases/party.do?caseNumber={case_id}&courtId=CT12&isTicket=&locnCode='
     return requests.get(url).json()
