@@ -34,20 +34,11 @@ do_curl(){
 
 
 do_curl_simple(){
-  curl 'https://www.courts.mo.gov/cnet/searchResult.do' \
-    -H 'Accept: application/json, text/javascript, */*; q=0.01' \
-    -H 'Accept-Language: en-US,en;q=0.9' \
-    -H 'Connection: keep-alive' \
-    -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'Cookie: JSESSIONID=0001yGlh_32octySxyI-U7tSOZQ:-1PCB; JSESSIONID=0001ZU-jb8qmlZ1dV_djDNm_RMa:-1088NE7; visitorid=20240402143553887447; UJID=f2d0c9e2-719e-4080-802e-64f5cce3272e; UJIA=-1951283160; _gid=GA1.2.663357942.1712086557; _gat_gtag_UA_109681667_1=1; _ga_DSVJ8DTRVZ=GS1.1.1712149531.3.1.1712149531.0.0.0; _ga=GA1.1.244685733.1712086557' \
-    -H 'Origin: https://www.courts.mo.gov' \
-    -H 'Referer: https://www.courts.mo.gov/cnet/searchResult.do?countyCode=WRN&newSearch=Y&courtCode=CT12&startDate=03%2F24%2F2024&caseStatus=A&caseType=Traffic%2FMunicipal&locationCode=' \
-    -H 'Sec-Fetch-Dest: empty' \
-    -H 'Sec-Fetch-Mode: cors' \
-    -H 'Sec-Fetch-Site: same-origin' \
-    -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36' \
-    -H 'X-Requested-With: XMLHttpRequest' \
-    --data-raw '{"draw":1,"columns":[{"data":0,"name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"initFiling","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseNumber","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseStyle","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseType","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"countyDesc","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}}],"order":[{"column":0,"dir":"asc"}],"start":0,"length":10,"search":{"value":"","regex":false}}'
+curl 'https://www.courts.mo.gov/cnet/searchResult.do' \
+  -H 'Accept: application/json, text/javascript, */*; q=0.01' \
+  -H 'Content-Type: application/json;charset=UTF-8' \
+  -H 'Cookie: JSESSIONID=0002-Me6LhYVWN8jLzFROfpbN12:8EAKVDAF6; UJID=a49c2e89-7865-407e-80c0-1e08fb23aeab; UJIA=-1951283160; _ga=GA1.2.1959160734.1712151730; _gid=GA1.2.502009280.1712151730; _ga_DSVJ8DTRVZ=GS1.1.1712151729.1.0.1712152529.0.0.0' \
+  --data-raw '{"draw":1,"columns":[{"data":0,"name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"initFiling","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseNumber","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseStyle","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseType","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"countyDesc","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}}],"order":[{"column":0,"dir":"asc"}],"start":0,"length":10,"search":{"value":"","regex":false}}'
 }
 
 do_curl_simple
