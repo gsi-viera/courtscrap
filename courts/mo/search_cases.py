@@ -1,20 +1,16 @@
 import requests
-from requests import post
-
-jsessionid = None
 
 
-def _maybe_setup_session():
-    global jsessionid
-    if jsessionid is None:
-        response = requests.get("https://www.courts.mo.gov/cnet/searchResult.do?countyCode=WRN&newSearch=Y&courtCode=CT12&startDate=03%2F24%2F2024&caseStatus=A&caseType=Traffic%2FMunicipal&locationCode=")
-        jsessionid = response.cookies['JSESSIONID']
-        print(f'session is is {jsessionid}')
+def create_search():
+    response = requests.get(
+        "https://www.courts.mo.gov/cnet/searchResult.do?countyCode=WRN&newSearch=Y&courtCode=CT12&startDate=03%2F24"
+        "%2F2024&caseStatus=A&caseType=Traffic%2FMunicipal")
+    jsessionid = response.cookies['JSESSIONID']
+    return jsessionid
 
 
 def search_cases():
-    global jsessionid
-    _maybe_setup_session()
+    jsessionid = create_search()
 
     headers = {
         'Accept': 'application/json, text/javascript, */*; q=0.01',
