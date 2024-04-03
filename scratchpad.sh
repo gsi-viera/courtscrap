@@ -47,9 +47,6 @@ do_curl_simple(){
     -H 'Sec-Fetch-Site: same-origin' \
     -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36' \
     -H 'X-Requested-With: XMLHttpRequest' \
-    -H 'sec-ch-ua: "Not(A:Brand";v="24", "Chromium";v="122"' \
-    -H 'sec-ch-ua-mobile: ?0' \
-    -H 'sec-ch-ua-platform: "Linux"' \
     --data-raw '{"draw":1,"columns":[{"data":0,"name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"initFiling","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseNumber","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseStyle","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"caseType","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}},{"data":"countyDesc","name":"","searchable":true,"orderable":true,"search":{"value":"","regex":false}}],"order":[{"column":0,"dir":"asc"}],"start":0,"length":10,"search":{"value":"","regex":false}}'
 }
 
