@@ -1,24 +1,53 @@
+from dataclasses import dataclass, asdict
+from types import SimpleNamespace
+from typing import Optional
+
 import requests
+import urllib
 
 
-def create_search():
+@dataclass
+class CaseSearchParams:
+    newSearch: str
+    courtCode: str
+    startDate: str
+    caseType: str
+    caseStatus: str
+    countyCode: Optional[str] = None
+
+
+def create_search(params: CaseSearchParams):
     session = requests.session()
-    session.get(
-        "https://www.courts.mo.gov/cnet/searchResult.do?countyCode=WRN&newSearch=Y&courtCode=CT12&startDate=03%2F24"
-        "%2F2024&caseStatus=A&caseType=Traffic%2FMunicipal")
+    params_dict = asdict(params, dict_factory=lambda x: {k: v for (k, v) in x if v is not None})
+    url_params = urllib.parse.urlencode(
+        params_dict
+    )
+    _ = session.get(f"https://www.courts.mo.gov/cnet/searchResult.do?{url_params}")
     return session
 
 
 def search_cases():
-    session = create_search()
+    params = CaseSearchParams(
+        newSearch="Y",
+        courtCode="CT12",
+        startDate="03/24/2024",
+        caseStatus="A",
+        caseType="Traffic/Municipal",
+        # countyCode="WRN"
+    )
+    session = create_search(params)
+    response = get_search_results(session, draw=1)
+    recordsTotal = response.recordsTotal
+    return response
 
+
+def get_search_results(session: any, draw: int):
     headers = {
         'Accept': 'application/json, text/javascript, */*; q=0.01',
         'Content-Type': 'application/json;charset=UTF-8',
     }
-
     json_data = {
-        'draw': 1,
+        'draw': draw,
         'columns': [
             {
                 'data': 0,
@@ -94,6 +123,5 @@ def search_cases():
             'regex': False,
         },
     }
-
     response = session.post('https://www.courts.mo.gov/cnet/searchResult.do', headers=headers, json=json_data).json()
-    return response
+    return SimpleNamespace(**response)
