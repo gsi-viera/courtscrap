@@ -2,20 +2,19 @@ import requests
 
 
 def create_search():
-    response = requests.get(
+    session = requests.session()
+    session.get(
         "https://www.courts.mo.gov/cnet/searchResult.do?countyCode=WRN&newSearch=Y&courtCode=CT12&startDate=03%2F24"
         "%2F2024&caseStatus=A&caseType=Traffic%2FMunicipal")
-    jsessionid = response.cookies['JSESSIONID']
-    return jsessionid
+    return session
 
 
 def search_cases():
-    jsessionid = create_search()
+    session = create_search()
 
     headers = {
         'Accept': 'application/json, text/javascript, */*; q=0.01',
         'Content-Type': 'application/json;charset=UTF-8',
-        'Cookie': f'JSESSIONID={jsessionid}'
     }
 
     json_data = {
@@ -96,5 +95,5 @@ def search_cases():
         },
     }
 
-    response = requests.post('https://www.courts.mo.gov/cnet/searchResult.do', headers=headers, json=json_data).json()
+    response = session.post('https://www.courts.mo.gov/cnet/searchResult.do', headers=headers, json=json_data).json()
     return response

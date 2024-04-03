@@ -15,8 +15,8 @@ def scrap_court():
     # Use a breakpoint in the code line below to debug your script.
     cases = search_cases()
     pprint(cases)
-    cases = get_cases([CourtAndCase("CT12", "171155061")])
-    print_cases(cases)
+    # cases = get_cases([CourtAndCase("CT12", "171155061")])
+    # print_cases(cases)
 
 
 # Press the green button in the gutter to run the script.
