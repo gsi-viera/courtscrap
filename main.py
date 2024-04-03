@@ -1,6 +1,7 @@
 from pprint import pprint
+from types import SimpleNamespace
 
-import requests
+from courts.missouri import get_case
 
 URL = 'https://www.courts.mo.gov/cnet/cases/newHeaderData.do?caseNumber=171155061&courtId=CT12&isTicket=&locnCode='
 
@@ -10,11 +11,11 @@ URL = 'https://www.courts.mo.gov/cnet/cases/newHeaderData.do?caseNumber=17115506
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-def get_cases():
-    return dict()
+def get_cases() -> list[any]:
+    return [SimpleNamespace(**get_case("171155061"))]
 
 
-def print_cases(cases):
+def print_cases(cases: list[any]):
     pprint(cases)
 
 
