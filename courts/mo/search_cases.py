@@ -1,6 +1,7 @@
 from dataclasses import dataclass, asdict
 from types import SimpleNamespace
 from typing import Optional
+from pandas import DataFrame
 
 import requests
 import urllib
@@ -27,10 +28,16 @@ def create_search(params: CaseSearchParams):
 
 
 def search_cases():
+    courtCode = "CT16"
+    startDate = "03/24/2024"
+    return do_search_cases(courtCode, startDate)
+
+
+def do_search_cases(courtCode, startDate):
     params = CaseSearchParams(
         newSearch="Y",
-        courtCode="CT12",
-        startDate="03/24/2024",
+        courtCode=courtCode,
+        startDate=startDate,
         caseStatus="A",
         caseType="Traffic/Municipal",
         # countyCode="WRN"
@@ -43,6 +50,10 @@ def search_cases():
         response = get_search_results(session, draw=response.draw + 1)
         records.extend(response.data)
     return records
+
+
+def pd_search_cases(courtCode, startDate):
+    return DataFrame(do_search_cases(courtCode, startDate))
 
 
 def get_search_results(session: any, draw: int):
